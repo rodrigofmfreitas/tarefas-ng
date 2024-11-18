@@ -1,0 +1,12 @@
+ul {
+  list-style-type: none;
+}
+
+.add-btn {
+  background-color: #d2665c;
+  margin-top: 0.5rem;
+  float: right;
+  width: 8rem;
+  height: 2rem;
+  border-radius: 5px;
+}

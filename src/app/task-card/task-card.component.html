@@ -1,0 +1,20 @@
+<div class="task-box">
+  <div class="priority">
+    {{task.priority}}
+  </div>
+  <div class="task-line-1">
+    <div *ngIf="task.priority === 'Baixa'" class="priority-circle-g"></div>
+    <div *ngIf="task.priority === 'Média'" class="priority-circle-y"></div>
+    <div *ngIf="task.priority === 'Alta'" class="priority-circle-r"></div>
+    <div class="task-name">
+      {{task.name}}
+    </div>
+  </div>
+  <div class="task-status">
+    Vencimento {{task.limitDate}}
+  </div>
+  <div class="button-line">
+    <button class="edit-btn" type="button" [routerLink]="['/task', task.id]" routerLinkActive="router-link-active">Editar</button>
+    <button class="delete-btn" type="button" (click)="deleteClicked.emit(task.id)">Deletar</button>
+  </div>
+</div>

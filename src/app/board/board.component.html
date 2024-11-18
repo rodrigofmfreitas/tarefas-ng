@@ -1,0 +1,14 @@
+<div>
+  <app-topbar></app-topbar>
+</div>
+<div>
+ <!-- <app-add-button></app-add-button> -->
+ <button class="add-btn" type="button" [routerLink]="['/add']" routerLinkActive="router-link-active">Adicionar</button>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let task of tasks">
+      <app-task-card [task]="task" (deleteClicked)="onTaskDeleted($event)"></app-task-card>
+    </li>
+  </ul>
+</div>

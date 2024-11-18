@@ -1,0 +1,35 @@
+<div class="topbar">Adicionar Tarefa</div>
+<!-- <app-card></app-card> -->
+<form class="form" action="">
+  <div class="card-box">
+    <p>
+      Nome
+    </p>
+    <input type="text" class="nome" placeholder="Informe a tarefa" [(ngModel)]="task.name" [ngModelOptions]="{standalone: true}">
+    <p>
+      Prioridade
+    </p>
+    <select name="priority" class="priority" [(ngModel)]="task.priority">
+      <option value="Alta">Alta</option>
+      <option value="Média">Média</option>
+      <option value="Baixa">Baixa</option>
+    </select>
+    <p>
+      Data Limite
+    </p>
+    <input type="date" name="limitDate" class="limitDate" [(ngModel)]="task.limitDate">
+    <p>
+      Categoria
+    </p>
+    <input type="text" class="category" [(ngModel)]="task.category" [ngModelOptions]="{standalone: true}">
+    <div class="cat-btn">
+      <button type="button" class="btn-dom" (click)="onClick('Doméstico')">Doméstico</button>
+      <button type="button" class="btn-per" (click)="onClick('Pessoal')">Pessoal</button>
+      <button type="button" class="btn-wrk" (click)="onClick('Trabalho')">Trabalho</button>
+    </div>
+    <div class="buttons">
+      <button type="submit" class="save" (click)="addTask()" [routerLink]="['/board']">Salvar</button>
+      <button class="cancel" type="button" [routerLink]="['/board']">Cancelar</button>
+    </div>
+  </div>
+</form>
